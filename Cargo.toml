@@ -1,0 +1,41 @@
+[package]
+name = "asset-vs-asset"
+version = "0.0.1"
+edition = "2021"
+
+[patch.crates-io]
+pathfinder_simd = { git = "https://github.com/servo/pathfinder.git", rev = "dc6034f" }
+pathfinder_geometry = { git = "https://github.com/servo/pathfinder.git", rev = "dc6034f" }
+
+
+[dependencies]
+anyhow = "1.0.0"
+# plotly = { version = "0.8.4", features = ["kaleido"] }
+yahoo_finance_api = "2.1.0"
+tokio = { version = "1", features = ["full"] }
+time = "0.3.34"
+serde_json = "1.0.0"
+reqwest = { version = "0.11", default-features = false, features = [
+    "json",
+    "rustls-tls",
+] }
+oklab = "1.0.0"
+
+
+[dependencies.plotters]
+version = "0.3.5"
+default-features = false
+features = [
+    "bitmap_backend",
+    "bitmap_encoder",
+    "bitmap_gif",
+    "svg_backend",
+    "chrono",
+    "ttf",
+    "image",
+    "deprecated_items",
+    "all_series",
+    "all_elements",
+    "full_palette",
+    "colormaps",
+]
